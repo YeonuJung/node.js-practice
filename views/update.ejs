@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>수정페이지</title>
+    <link rel="stylesheet" type="text/css" href="../update.css" />
+  </head>
+  <body>
+    <div class="header">
+    <h1 style="text-align: center;">수정페이지</h1>
+    </div>
+    <section>
+      <form class="insert" method="post">
+        <div class="formContent">
+          <label for="title">번호뒷자리</label>
+          <input
+            class = "phone"
+            type="text"
+            name="번호뒷자리"
+            value="<%= item.번호뒷자리 %>"
+            disabled
+          />
+          <br />
+          <label>제목</label>
+          <input type="text" name="제목" maxlength="20" value="<%= item.제목 %>" />
+          <br />
+          <label>문의내용</label>
+          <input class = "inquire"type="text" name="문의내용" maxlength="50" value="<%= item.문의내용 %>" />
+          <br />
+        </div>
+        <input type="submit" class="insertBtn" value="완료" />
+      </form>
+    </section>
+  </body>
+</html>

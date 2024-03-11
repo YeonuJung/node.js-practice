@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>문의리스트</title>
+    <link rel="stylesheet" type="text/css" href="board.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="header">
+    <h1 style="text-align: center;">문의리스트</h1>
+    </div>
+    <section>
+      <div class = "info-container">
+      <p class = "info">⚠️문의하신 내용에 대한 답변은 전화로 안내드리니 참고바랍니다⚠️</p>
+      </div>
+      <a href="/insert" class="insertBtn">문의하기</a>
+
+      <table class="listTable">
+        <tr class="listTableTr">
+          <th>번호뒷자리</th>
+          <th>제목</th>
+          <th>문의내용</th>
+          <th>날짜</th>
+          <th>수정/삭제</th>
+        </tr>
+        <% data.forEach(function(item, index) { %>
+        <tr>
+          <td><%= item.번호뒷자리 %></td>
+          <td><%= item.제목 %></td>
+          <td><%= item.문의내용 %></td>
+          <td><%= item.등록날짜.toString().slice(0,24) %></td>
+          <td>
+            <a
+              href="/update/<%= item.번호뒷자리 %>"
+              class="btn update"
+              title="수정"
+            >
+              <i class="fas fa-pencil-alt"></i>
+            </a>
+            <a
+              href="/delete/<%= item.번호뒷자리 %>"
+              class="btn delete"
+              title="삭제"
+            >
+              <i class="fas fa-times"></i>
+            </a>
+          </td>
+        </tr>
+        <% }); %>
+      </table>
+    </section>
+  </body>
+</html>
