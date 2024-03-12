@@ -14,8 +14,8 @@ router.post("/", function (request, response) {
   const body = request.body;
 
   mysql.query(
-    "INSERT INTO postTable(번호뒷자리, 제목, 문의내용) VALUES(?,?,?)",
-    [body.번호뒷자리, body.제목, body.문의내용,],
+    "INSERT INTO postTable(번호뒷자리, 제목, 비밀번호, 문의내용) VALUES(?,?,?,?)",
+    [body.번호뒷자리, body.제목, body.비밀번호, body.문의내용,],
     function (error, results) {
       if (!error) {
         response.redirect("/");

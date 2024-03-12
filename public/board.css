@@ -96,6 +96,7 @@ td:nth-child(5) {
 }
 a {
   text-decoration: none;
+  color: black;
 }
 
 td .btn {

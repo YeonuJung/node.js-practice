@@ -23,12 +23,16 @@ const listRouter = require("./routes/list");
 const insertRouter = require("./routes/insert");
 const deleteRouter = require("./routes/delete");
 const updateRouter = require("./routes/update");
+const passwordRouter = require("./routes/password")
+const passwordRouter2 = require("./routes/password2")
 
 // 라우터 설정
 app.use("/", listRouter);
 app.use("/insert", insertRouter);
 app.use("/delete", deleteRouter);
 app.use("/update", updateRouter);
+app.use("/password", passwordRouter);
+app.use("/password2", passwordRouter2);
 
 // 서버 실행
 app.listen(3000, function () {
